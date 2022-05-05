@@ -1,0 +1,33 @@
+{
+  "name": "webpackmodulegraphplugin",
+  "version": "1.0.0",
+  "description": "A plugin for outputting webpack module dependency graphs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srhinee/webpackModuleGraphPlugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "chunk",
+    "graph"
+  ],
+  "author": "samsara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srhinee/webpackModuleGraphPlugin/issues"
+  },
+  "homepage": "https://github.com/srhinee/webpackModuleGraphPlugin#readme",
+  "peerDependencies": {
+    "webpack": "^4.46.0"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
