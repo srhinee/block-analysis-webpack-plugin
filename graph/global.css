@@ -101,7 +101,12 @@ body {
 	padding: 20px;
 	color: #666;
 	user-select: none;
+	cursor:move;
 	overflow: auto;
+}
+
+#model div{
+	pointer-events:none
 }
 
 #model::-webkit-scrollbar {

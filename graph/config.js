@@ -204,7 +204,7 @@
 						hoverList.push (c);
 					}
 				}
-				if (repeatNodes.length) {
+				if (repeatNodes?.length) {
 					repeatNodes.forEach (addList);
 				}
 				hoverList.push (item);
@@ -225,7 +225,7 @@
 		});
 	}
 
-	initTree (originalData);
+	initTree (originTreeNodeData);
 
 	if (typeof window !== "undefined") window.onresize = () => {
 		if (!graph || graph.get ("destroyed")) return;
@@ -243,9 +243,9 @@
 		isOriginal = !isOriginal;
 		button.innerHTML = isOriginal ? "optimized" : "original";
 		if (isGraph) {
-			graph.changeData (isOriginal ? originalData_ : optimizeData_);
+			graph.changeData (isOriginal ? originGraphNodeData : optimizeGraphNodeData);
 		} else {
-			graph.changeData (isOriginal ? originalData : optimizeData);
+			graph.changeData (isOriginal ? originTreeNodeData : optimizeTreeNodeData);
 			graph.fitView ();
 		}
 	}
@@ -254,8 +254,8 @@
 		isGraph = !isGraph;
 		button1.innerHTML = !isGraph ? "graph" : "tree";
 		graph.destroy ();
-		if (isGraph) initGraph (isOriginal ? originalData_ : optimizeData_);
-		else initTree (isOriginal ? originalData : optimizeData);
+		if (isGraph) initGraph (isOriginal ? originGraphNodeData : optimizeGraphNodeData);
+		else initTree (isOriginal ? originTreeNodeData : optimizeTreeNodeData);
 	}
 
 	container.addEventListener ("click", (e) => {
@@ -265,16 +265,20 @@
 	let isMouseDown, initX, initY;
 	model.addEventListener ("mousedown", function(e) {
 		isMouseDown = true;
+		//The distance between the upper left corner of the converged element
 		initX = e.offsetX;
 		initY = e.offsetY;
-	});
+		//Set event capture to prevent click on child element offset X is the value of child element
+		//However, it doesn't work, it's better to set the child element pointer-events:none
+	},true);
 
-	model.addEventListener ("mouseup", function(e) {
+	document.addEventListener ("mouseup", function(e) {
 		isMouseDown = false;
 	});
 
-	model.addEventListener ("mousemove", (e) => {
+	document.addEventListener ("mousemove", (e) => {
 		if (isMouseDown) {
+			//client X represents the distance from the upper left corner of the window
 			model.style.top = e.clientY - initY + "px";
 			model.style.left = e.clientX - initX + "px";
 		}
@@ -327,7 +331,7 @@
 		let chunksTemplate = `
 		<div class="cell">
 			<div class="left">chunks:</div>
-			<div class="right">${data.chunks.join (",")}</div>
+			<div class="right">${data.chunks?data.chunks.join (","):'null'}</div>
 		</div>
 		`;
 
