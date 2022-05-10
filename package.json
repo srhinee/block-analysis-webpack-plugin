@@ -4,7 +4,9 @@
   "description": "A plugin for outputting webpack module dependency graphs",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "example:simple": "node example/simple/bootstrap.js",
+    "test": "jest --coverage",
+    "test:update": "jest --updateSnapshot"
   },
   "repository": {
     "type": "git",
