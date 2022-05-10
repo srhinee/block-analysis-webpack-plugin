@@ -1,0 +1,499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test simple example development case should result snapshot is valid 1`] = `
+Object {
+  "optimizeGraphNodeData": Object {
+    "edges": Array [
+      Object {
+        "source": "N0",
+        "target": "N1",
+      },
+      Object {
+        "source": "N1",
+        "target": "N2",
+      },
+      Object {
+        "source": "N2",
+        "target": "N3",
+      },
+      Object {
+        "source": "N3",
+        "target": "N4",
+      },
+      Object {
+        "source": "N2",
+        "target": "N5",
+      },
+      Object {
+        "source": "N5",
+        "target": "N6",
+      },
+    ],
+    "nodes": Array [
+      Object {
+        "id": "N0",
+        "label": "root",
+        "meta": Object {
+          "type": "root",
+        },
+      },
+      Object {
+        "id": "N1",
+        "label": "simple",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N2",
+        "label": "a.js",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N3",
+        "label": "b.js",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N4",
+        "label": "d.js",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N5",
+        "label": "c",
+        "meta": Object {
+          "chunks": Array [
+            0,
+          ],
+          "request": "./c",
+          "type": "ImportDependenciesBlock",
+        },
+      },
+      Object {
+        "id": "N6",
+        "label": "c.js",
+        "meta": Object {
+          "chunks": Array [
+            0,
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+          "type": "NormalModule",
+        },
+      },
+    ],
+  },
+  "optimizeTreeNodeData": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [],
+                    "collapsed": false,
+                    "id": "N4",
+                    "label": "d.js",
+                    "meta": Object {
+                      "chunks": Array [
+                        "main",
+                      ],
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+                      "type": "NormalModule",
+                    },
+                    "parentNode": null,
+                    "repeatNodes": Array [],
+                  },
+                ],
+                "collapsed": false,
+                "id": "N3",
+                "label": "b.js",
+                "meta": Object {
+                  "chunks": Array [
+                    "main",
+                  ],
+                  "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+                  "type": "NormalModule",
+                },
+                "parentNode": null,
+                "repeatNodes": Array [],
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [],
+                    "collapsed": false,
+                    "id": "N6",
+                    "label": "c.js",
+                    "meta": Object {
+                      "chunks": Array [
+                        0,
+                      ],
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+                      "type": "NormalModule",
+                    },
+                    "parentNode": null,
+                    "repeatNodes": Array [],
+                  },
+                ],
+                "collapsed": false,
+                "id": "N5",
+                "label": "c",
+                "meta": Object {
+                  "chunks": Array [
+                    0,
+                  ],
+                  "request": "./c",
+                  "type": "ImportDependenciesBlock",
+                },
+                "parentNode": null,
+                "repeatNodes": Array [],
+              },
+            ],
+            "collapsed": false,
+            "id": "N2",
+            "label": "a.js",
+            "meta": Object {
+              "chunks": Array [
+                "main",
+              ],
+              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+              "type": "NormalModule",
+            },
+            "parentNode": null,
+            "repeatNodes": Array [],
+          },
+        ],
+        "collapsed": false,
+        "id": "N1",
+        "label": "simple",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "type": "NormalModule",
+        },
+        "parentNode": null,
+        "repeatNodes": Array [],
+      },
+    ],
+    "collapsed": false,
+    "id": "N0",
+    "label": "root",
+    "meta": Object {
+      "type": "root",
+    },
+  },
+  "originGraphNodeData": Object {
+    "edges": Array [
+      Object {
+        "source": "N0",
+        "target": "N1",
+      },
+      Object {
+        "source": "N1",
+        "target": "N2",
+      },
+      Object {
+        "source": "N2",
+        "target": "N3",
+      },
+      Object {
+        "source": "N3",
+        "target": "N4",
+      },
+      Object {
+        "source": "N2",
+        "target": "N5",
+      },
+      Object {
+        "source": "N5",
+        "target": "N6",
+      },
+      Object {
+        "source": "N6",
+        "target": "N4",
+      },
+      Object {
+        "source": "N6",
+        "target": "N8",
+      },
+      Object {
+        "source": "N8",
+        "target": "N3",
+      },
+    ],
+    "nodes": Array [
+      Object {
+        "id": "N0",
+        "label": "root",
+        "meta": Object {
+          "type": "root",
+        },
+      },
+      Object {
+        "id": "N1",
+        "label": "simple",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N2",
+        "label": "a.js",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N3",
+        "label": "b.js",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N4",
+        "label": "d.js",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N5",
+        "label": "c",
+        "meta": Object {
+          "chunks": Array [
+            0,
+          ],
+          "request": "./c",
+          "type": "ImportDependenciesBlock",
+        },
+      },
+      Object {
+        "id": "N6",
+        "label": "c.js",
+        "meta": Object {
+          "chunks": Array [
+            0,
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+          "type": "NormalModule",
+        },
+      },
+      Object {
+        "id": "N8",
+        "label": "b",
+        "meta": Object {
+          "chunks": undefined,
+          "request": "./b",
+          "type": "ImportDependenciesBlock",
+        },
+      },
+    ],
+  },
+  "originTreeNodeData": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [],
+                    "collapsed": false,
+                    "id": "N4",
+                    "label": "d.js",
+                    "meta": Object {
+                      "chunks": Array [
+                        "main",
+                      ],
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+                      "type": "NormalModule",
+                    },
+                    "parentNode": null,
+                    "repeatNodes": Array [
+                      "N7",
+                    ],
+                  },
+                ],
+                "collapsed": false,
+                "id": "N3",
+                "label": "b.js",
+                "meta": Object {
+                  "chunks": Array [
+                    "main",
+                  ],
+                  "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+                  "type": "NormalModule",
+                },
+                "parentNode": null,
+                "repeatNodes": Array [
+                  "N9",
+                ],
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "collapsed": false,
+                        "id": "N7",
+                        "label": "d.js",
+                        "meta": Object {
+                          "chunks": Array [
+                            "main",
+                          ],
+                          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+                          "type": "NormalModule",
+                        },
+                        "parentNode": "N4",
+                        "repeatNodes": Array [],
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "children": Array [],
+                            "collapsed": false,
+                            "id": "N9",
+                            "label": "b.js",
+                            "meta": Object {
+                              "chunks": Array [
+                                "main",
+                              ],
+                              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+                              "type": "NormalModule",
+                            },
+                            "parentNode": "N3",
+                            "repeatNodes": Array [],
+                          },
+                        ],
+                        "collapsed": false,
+                        "id": "N8",
+                        "label": "b",
+                        "meta": Object {
+                          "chunks": undefined,
+                          "request": "./b",
+                          "type": "ImportDependenciesBlock",
+                        },
+                        "parentNode": null,
+                        "repeatNodes": Array [],
+                      },
+                    ],
+                    "collapsed": false,
+                    "id": "N6",
+                    "label": "c.js",
+                    "meta": Object {
+                      "chunks": Array [
+                        0,
+                      ],
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+                      "type": "NormalModule",
+                    },
+                    "parentNode": null,
+                    "repeatNodes": Array [],
+                  },
+                ],
+                "collapsed": false,
+                "id": "N5",
+                "label": "c",
+                "meta": Object {
+                  "chunks": Array [
+                    0,
+                  ],
+                  "request": "./c",
+                  "type": "ImportDependenciesBlock",
+                },
+                "parentNode": null,
+                "repeatNodes": Array [],
+              },
+            ],
+            "collapsed": false,
+            "id": "N2",
+            "label": "a.js",
+            "meta": Object {
+              "chunks": Array [
+                "main",
+              ],
+              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+              "type": "NormalModule",
+            },
+            "parentNode": null,
+            "repeatNodes": Array [],
+          },
+        ],
+        "collapsed": false,
+        "id": "N1",
+        "label": "simple",
+        "meta": Object {
+          "chunks": Array [
+            "main",
+          ],
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "type": "NormalModule",
+        },
+        "parentNode": null,
+        "repeatNodes": Array [],
+      },
+    ],
+    "collapsed": false,
+    "id": "N0",
+    "label": "root",
+    "meta": Object {
+      "type": "root",
+    },
+  },
+  "performanceData": Object {
+    "chunkIds": Array [
+      0,
+      "main",
+    ],
+    "chunkNums": 2,
+    "entriesNums": 1,
+    "moduleNums": 5,
+  },
+}
+`;
