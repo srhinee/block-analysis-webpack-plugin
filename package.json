@@ -1,19 +1,18 @@
 {
-  "name": "block-analysis-webpack-plugin",
+  "name": "webpackmodulegraphplugin",
   "version": "1.0.0",
   "description": "A plugin for outputting webpack module dependency graphs",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "example:simple": "node examples/simple/bootstarp.js",
-    "serve": "node lib --open",
+    "example:simple": "node examples/simple/bootstrap.js",
     "test": "jest --coverage",
     "test:update": "jest --updateSnapshot",
     "cypress:open": "cypress open",
-    "cypress": "cypress run --spec cypress/integration/webpack-module-graph/**/*"
+    "cypress": "npm run serve&&cypress run --spec cypress/integration/3-webpack-module-graph/**/*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/srhinee/block-analysis-webpack-plugin.git"
+    "url": "git+https://github.com/srhinee/webpackModuleGraphPlugin.git"
   },
   "keywords": [
     "webpack",
@@ -23,16 +22,14 @@
   "author": "samsara",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/srhinee/block-analysis-webpack-plugin/issues"
+    "url": "https://github.com/srhinee/webpackModuleGraphPlugin/issues"
   },
-  "homepage": "https://github.com/srhinee/block-analysis-webpack-plugin#readme",
+  "homepage": "https://github.com/srhinee/webpackModuleGraphPlugin#readme",
   "peerDependencies": {
     "webpack": "^4.46.0"
   },
   "dependencies": {
-    "express": "^4.18.1",
-    "minimist": "^1.2.6",
-    "open": "^8.4.0"
+    "express": "^4.18.1"
   },
   "devDependencies": {
     "cypress": "^9.6.1",
