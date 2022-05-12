@@ -1,0 +1,102 @@
+{
+  "id": "N0",
+  "label": "root",
+  "meta": {
+    "type": "root"
+  },
+  "children": [
+    {
+      "label": "index.js",
+      "meta": {
+        "type": "ConcatenatedModule",
+        "chunks": [
+          0
+        ],
+        "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\index.js",
+        "depList": [
+          {
+            "type": "external",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\b.js"
+          },
+          {
+            "type": "concatenated",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\a.js"
+          },
+          {
+            "type": "concatenated",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\index.js"
+          }
+        ]
+      },
+      "children": [
+        {
+          "label": "b.js",
+          "meta": {
+            "type": "NormalModule",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\b.js",
+            "chunks": [
+              0
+            ]
+          },
+          "children": [
+            {
+              "label": "d.js",
+              "meta": {
+                "type": "NormalModule",
+                "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\d.js",
+                "chunks": [
+                  0
+                ]
+              },
+              "children": [],
+              "repeatNodes": [],
+              "parentNode": null,
+              "id": "N3",
+              "collapsed": false
+            }
+          ],
+          "repeatNodes": [],
+          "parentNode": null,
+          "id": "N2",
+          "collapsed": false
+        },
+        {
+          "label": "c",
+          "meta": {
+            "type": "ImportDependenciesBlock",
+            "request": "./c",
+            "chunks": [
+              1
+            ]
+          },
+          "children": [
+            {
+              "label": "c.js",
+              "meta": {
+                "type": "NormalModule",
+                "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\c.js",
+                "chunks": [
+                  1
+                ]
+              },
+              "children": [],
+              "repeatNodes": [],
+              "parentNode": null,
+              "id": "N5",
+              "collapsed": false
+            }
+          ],
+          "repeatNodes": [],
+          "parentNode": null,
+          "id": "N4",
+          "collapsed": false
+        }
+      ],
+      "repeatNodes": [],
+      "parentNode": null,
+      "id": "N1",
+      "collapsed": false
+    }
+  ],
+  "collapsed": false
+}
