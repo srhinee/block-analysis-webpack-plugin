@@ -33,7 +33,6 @@ describe ('test simple example development case', () => {
   })
 
   it ('should result snapshot is valid', function () {
-    debugger
     expect (result).toMatchSnapshot ()
   })
 })

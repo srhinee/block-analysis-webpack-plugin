@@ -44,7 +44,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\index.js",
           "type": "NormalModule",
         },
       },
@@ -55,7 +55,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\a.js",
           "type": "NormalModule",
         },
       },
@@ -66,7 +66,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\b.js",
           "type": "NormalModule",
         },
       },
@@ -77,7 +77,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\d.js",
           "type": "NormalModule",
         },
       },
@@ -99,7 +99,7 @@ Object {
           "chunks": Array [
             0,
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\c.js",
           "type": "NormalModule",
         },
       },
@@ -122,7 +122,7 @@ Object {
                       "chunks": Array [
                         "main",
                       ],
-                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\d.js",
                       "type": "NormalModule",
                     },
                     "parentNode": null,
@@ -136,7 +136,7 @@ Object {
                   "chunks": Array [
                     "main",
                   ],
-                  "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+                  "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\b.js",
                   "type": "NormalModule",
                 },
                 "parentNode": null,
@@ -153,7 +153,7 @@ Object {
                       "chunks": Array [
                         0,
                       ],
-                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\c.js",
                       "type": "NormalModule",
                     },
                     "parentNode": null,
@@ -181,7 +181,7 @@ Object {
               "chunks": Array [
                 "main",
               ],
-              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\a.js",
               "type": "NormalModule",
             },
             "parentNode": null,
@@ -195,7 +195,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\index.js",
           "type": "NormalModule",
         },
         "parentNode": null,
@@ -263,7 +263,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\index.js",
           "type": "NormalModule",
         },
       },
@@ -274,7 +274,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\a.js",
           "type": "NormalModule",
         },
       },
@@ -285,7 +285,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\b.js",
           "type": "NormalModule",
         },
       },
@@ -296,7 +296,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\d.js",
           "type": "NormalModule",
         },
       },
@@ -318,7 +318,7 @@ Object {
           "chunks": Array [
             0,
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\c.js",
           "type": "NormalModule",
         },
       },
@@ -350,7 +350,7 @@ Object {
                       "chunks": Array [
                         "main",
                       ],
-                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\d.js",
                       "type": "NormalModule",
                     },
                     "parentNode": null,
@@ -366,7 +366,7 @@ Object {
                   "chunks": Array [
                     "main",
                   ],
-                  "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+                  "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\b.js",
                   "type": "NormalModule",
                 },
                 "parentNode": null,
@@ -387,7 +387,7 @@ Object {
                           "chunks": Array [
                             "main",
                           ],
-                          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\d.js",
+                          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\d.js",
                           "type": "NormalModule",
                         },
                         "parentNode": "N4",
@@ -404,7 +404,7 @@ Object {
                               "chunks": Array [
                                 "main",
                               ],
-                              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\b.js",
+                              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\b.js",
                               "type": "NormalModule",
                             },
                             "parentNode": "N3",
@@ -430,7 +430,7 @@ Object {
                       "chunks": Array [
                         0,
                       ],
-                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\c.js",
+                      "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\c.js",
                       "type": "NormalModule",
                     },
                     "parentNode": null,
@@ -458,7 +458,7 @@ Object {
               "chunks": Array [
                 "main",
               ],
-              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\a.js",
+              "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\a.js",
               "type": "NormalModule",
             },
             "parentNode": null,
@@ -472,7 +472,7 @@ Object {
           "chunks": Array [
             "main",
           ],
-          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\example\\\\simple\\\\index.js",
+          "request": "F:\\\\project\\\\webpackModuleGraphPlugin\\\\examples\\\\simple\\\\index.js",
           "type": "NormalModule",
         },
         "parentNode": null,
