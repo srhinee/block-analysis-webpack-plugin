@@ -1,3 +1,3 @@
-exports = function (name) {
-  return import (`./lib/${name}.js`)
-}
+const async = 2
+
+export default async

@@ -1,5 +1,5 @@
-define(['./lib/a.js','./lib/b.js','./lib/c.js'],function (a,b){
-  return a+b
-})
+const amd = 1
+
+export default amd
 
 
