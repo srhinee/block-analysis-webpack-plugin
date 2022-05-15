@@ -2,3 +2,4 @@
 /.idea
 /cypress/videos/
 /cypress/screenshots/
+/yarn-error.log
