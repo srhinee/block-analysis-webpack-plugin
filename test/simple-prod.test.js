@@ -8,7 +8,6 @@ let result
 beforeAll (() => {
   config.plugins.pop ()
   config.plugins.push (new plugin ())
-  delete config.optimization
   config.mode = 'production'
   const compiler = webpack (config)
   compiler.run ()
