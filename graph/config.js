@@ -5,7 +5,6 @@
   const height = container.scrollHeight || 500
   const moduleMap = {
     root: {color: "#666"},
-    chunk: {color: "#683e9f"},
     ImportDependenciesBlock: {color: "rgb(255,153,102)"},
     AsyncDependenciesBlock: {color: "#d3aa81"},
     AMDRequireDependenciesBlock: {color: "rgb(255,102,102)"},
@@ -197,8 +196,7 @@
       }
       graph.on ("node:mouseenter", (evt) => {
         const {item} = evt
-        let {repeatNodes, parentNode, id, meta} = item._cfg.model
-        if (meta.type === "root" || meta.type === "chunk") return
+        let {repeatNodes, parentNode, id} = item._cfg.model
         if (parentNode) {
           let c = graph.findById (parentNode)
           if (!c) console.warn (parentNode + "is collapsed")
@@ -216,9 +214,7 @@
       })
 
       graph.on ("node:mouseleave", (evt) => {
-        hoverList.forEach (v => {
-          if (graph.findById (v._cfg.id)) graph.setItemState (v, "hover", false)
-        })
+        hoverList.forEach (v => graph.setItemState (v, "hover", false))
         hoverList = []
       })
     }
@@ -227,7 +223,7 @@
       //invalid event
       evt.preventDefault ()
       evt.stopPropagation ()
-      if (item._cfg.model.meta.type !== "root" && item._cfg.model.meta.type !== "chunk") showModel (clientX, clientY, item._cfg.model)
+      if (item._cfg.model.id !== "N0") showModel (clientX, clientY, item._cfg.model)
     })
   }
 
@@ -293,7 +289,7 @@
 
 
   function genLoader (request) {
-    let path = request.replace (/\\/g, "/")
+    let path =  request.replace (/\\/g, "/")
     let loaders = path.split ("!")
     let resource = loaders.pop ().split ("?")
     let result = []
@@ -335,12 +331,12 @@
 			</div>
 		`
 
-    let chunksTemplate = data.chunks?.length ? `
+    let chunksTemplate = `
 		<div class="cell">
 			<div class="left">chunks:</div>
-			<div class="right">${data.chunks.join (",")}</div>
+			<div class="right">${data.chunks ? data.chunks.join (",") : 'null'}</div>
 		</div>
-		` : ''
+		`
 
     let loaderTemplate = list.result.map (v => {
       let indent = ""
@@ -419,7 +415,7 @@
     const offset = 20
     const size = 500 + offset * 3
     model.style.left = (width / 2 < clientX ? clientX - size : clientX + offset) + "px"
-    model.style.top = (height / 2 < clientY ? clientY - size + 200 : clientY + offset) + "px"
+    model.style.top = (height / 2 < clientY ? clientY - size : clientY + offset) + "px"
     model.style.display = "block"
     stopPropagation = true
     setTimeout (() => stopPropagation = false, 100)
