@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
+    "less": "^3.13.1",
+    "less-loader": "^4.0.3",
+    "pug-plain-loader": "^1.1.0",
+    "pug": "3.0.2",
+    "vue": "^2.6.14",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "~2.6.14",
+    "file-loader": "^6.2.0",
+    "raw-loader": "^4.0.2"
+  }
+}
