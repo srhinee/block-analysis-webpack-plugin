@@ -83,9 +83,7 @@ module的结构进行收集并使用G6可视化引擎进行渲染,插件的模�
   同步导入文件产生的类型,项目中最为普遍,也是惟一的真实节点,每一个NormaModule均代表一个真实项目文件,ES6导入`import mod from './a.js'`或者`const mod=require('./a.js')`
   语句会生成名为a.js的节点
 
-- <img alt="concatenateModule" style='object-fit:contain' src="./public/concatenatedModule.png" width="130"/>**
-  ConcatenatedModule**节点,`optimization.concatenateModules`
-  开启时会产生该类型模块,webpack production mode下会默认开启,也就是所谓的作用域提升(scope hoisting)
+- <img alt="concatenateModule" style='object-fit:contain' src="./public/concatenatedModule.png" width="130"/>**ConcatenatedModule**节点,`optimization.concatenateModules`开启时会产生该类型模块,webpack production mode下会默认开启,也就是所谓的作用域提升(scope hoisting)
   ,这时多个normalModule会根据合并规则合并在一个concatenateModule,详情见[优化](https://webpack.docschina.org/configuration/optimization/#optimizationconcatenatemodules)
 
 - <img alt="contextModule" style='object-fit:contain' src="./public/contextModule.png" width="130"/>**ContextModule**
@@ -107,18 +105,14 @@ module的结构进行收集并使用G6可视化引擎进行渲染,插件的模�
   节点,css提取时生成的节点,由`MiniCssExtractPlugin`产生,表示为一个被提取的css文件.
 
 
-- <img alt="importBlock" style='object-fit:contain' src="./public/importBlock.png" width="130"/>**
-  ImportDependenciesBlock**节点, ES6动态导入时生成的类型,`import('./c').then()`语句会生成名为c的节点
+- <img alt="importBlock" style='object-fit:contain' src="./public/importBlock.png" width="130"/>**ImportDependenciesBlock**节点, ES6动态导入时生成的类型,`import('./c').then()`语句会生成名为c的节点
 
-- <img alt="AMDRequireDependenciesBlock" style='object-fit:contain' src="./public/amdRequireBlock.png" width="130"/>**
-  AMDRequireDependenciesBlock**节点,AMD导入生成的类型,`require (['./amd.js'],(module)=>{})`语句会生成名为amd.js的节点
+- <img alt="AMDRequireDependenciesBlock" style='object-fit:contain' src="./public/amdRequireBlock.png" width="130"/>**AMDRequireDependenciesBlock**节点,AMD导入生成的类型,`require (['./amd.js'],(module)=>{})`语句会生成名为amd.js的节点
 
-- <img alt="requireEnsureDependenciesBlock" style='object-fit:contain' style='object-fit:contain' src="./public/requireEnsureBlock.png" width="130"/>**
-  RequireEnsureDependenciesBlock**节点,webpack特有的CJS异步导入生成的类型,`require.ensure(["./shared"], (shared)=> {})`
+- <img alt="requireEnsureDependenciesBlock" style='object-fit:contain' style='object-fit:contain' src="./public/requireEnsureBlock.png" width="130"/>**RequireEnsureDependenciesBlock**节点,webpack特有的CJS异步导入生成的类型,`require.ensure(["./shared"], (shared)=> {})`
   语句会生成名为shared的节点,详情可见[module-methods](https://webpack.js.org/api/module-methods/)
 
-- <img alt="asyncDependenciesBlock" style='object-fit:contain' src="./public/asyncBlock.png" width="130"/>**
-  AsyncDependenciesBlock**节点, 动态加载表达式会生成的类型,一般是contextModule的子节点
+- <img alt="asyncDependenciesBlock" style='object-fit:contain' src="./public/asyncBlock.png" width="130"/>**AsyncDependenciesBlock**节点, 动态加载表达式会生成的类型,一般是contextModule的子节点
   ```js
   //index.js
   function dynamicImport(name) {
