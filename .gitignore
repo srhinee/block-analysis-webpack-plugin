@@ -1,2 +1,6 @@
-/node_modules/
+**/node_modules/
+**/dist/
 /.idea
+/cypress/videos/
+/cypress/screenshots/
+/yarn-error.log

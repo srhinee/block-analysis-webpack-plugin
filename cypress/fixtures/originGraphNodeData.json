@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "id": "N0",
+      "label": "root",
+      "meta": {
+        "type": "root"
+      }
+    },
+    {
+      "id": "N1",
+      "meta": {
+        "type": "ConcatenatedModule",
+        "chunks": [
+          0
+        ],
+        "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\index.js",
+        "depList": [
+          {
+            "type": "external",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\b.js"
+          },
+          {
+            "type": "concatenated",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\a.js"
+          },
+          {
+            "type": "concatenated",
+            "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\index.js"
+          }
+        ]
+      },
+      "label": "index.js"
+    },
+    {
+      "id": "N2",
+      "meta": {
+        "type": "NormalModule",
+        "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\b.js",
+        "chunks": [
+          0
+        ]
+      },
+      "label": "b.js"
+    },
+    {
+      "id": "N3",
+      "meta": {
+        "type": "NormalModule",
+        "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\d.js",
+        "chunks": [
+          0
+        ]
+      },
+      "label": "d.js"
+    },
+    {
+      "id": "N4",
+      "meta": {
+        "type": "ImportDependenciesBlock",
+        "request": "./c",
+        "chunks": [
+          1
+        ]
+      },
+      "label": "c"
+    },
+    {
+      "id": "N5",
+      "meta": {
+        "type": "NormalModule",
+        "request": "F:\\project\\webpackModuleGraphPlugin\\example\\simple\\c.js",
+        "chunks": [
+          1
+        ]
+      },
+      "label": "c.js"
+    },
+    {
+      "id": "N7",
+      "meta": {
+        "type": "ImportDependenciesBlock",
+        "request": "./b"
+      },
+      "label": "b"
+    }
+  ],
+  "edges": [
+    {
+      "source": "N0",
+      "target": "N1"
+    },
+    {
+      "source": "N1",
+      "target": "N2"
+    },
+    {
+      "source": "N2",
+      "target": "N3"
+    },
+    {
+      "source": "N1",
+      "target": "N4"
+    },
+    {
+      "source": "N4",
+      "target": "N5"
+    },
+    {
+      "source": "N5",
+      "target": "N3"
+    },
+    {
+      "source": "N5",
+      "target": "N7"
+    },
+    {
+      "source": "N7",
+      "target": "N2"
+    }
+  ]
+}

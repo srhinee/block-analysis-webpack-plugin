@@ -1,14 +1,14 @@
 const webpack = require ('webpack')
 
 const handler = require ('../lib/webpack4Handler.js')
-const config = require ('../example/simple/webpack.config.js')
+const config = require ('../examples/simple/webpack.config.js')
 const {plugin, pluginIsCalled} = require ('./setupTest.js')
 
 let result
 beforeAll (() => {
   config.plugins.pop ()
   config.plugins.push (new plugin ())
-  delete config.optimization
+  config.mode = 'development'
   const compiler = webpack (config)
   compiler.run ()
   return pluginIsCalled
@@ -33,7 +33,6 @@ describe ('test simple example development case', () => {
   })
 
   it ('should result snapshot is valid', function () {
-    debugger
     expect (result).toMatchSnapshot ()
   })
 })
