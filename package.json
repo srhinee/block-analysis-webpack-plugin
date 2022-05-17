@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "A plugin for outputting webpack module dependency graphs",
   "main": "lib/index.js",
+  "files": [
+    "graph",
+    "lib"
+  ],
   "scripts": {
     "example:simple": "node examples/simple/bootstarp.js",
     "serve": "node lib --open",
