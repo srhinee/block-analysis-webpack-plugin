@@ -1,6 +1,6 @@
 name: npm public
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.
+          registry-url: https://registry.npmjs.com
       - name: publish
         run: npm publish
         env:
