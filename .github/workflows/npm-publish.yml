@@ -16,17 +16,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.
-      - name: setup
-        run: |
-          git switch -c dev
-          git config --global user.email "shrine8263@yaeh.net"
-          git config --global user.name "shrine"
-      - name: bump verison
-        run: |
-          npm version patch
-          git add package.json
-          git commit -m 'patch version'
-          git push https://${{secrets.ACCESS}}@github.com/srhinee/block-analysis-webpack-plugin
       - name: publish
         run: npm publish
         env:
