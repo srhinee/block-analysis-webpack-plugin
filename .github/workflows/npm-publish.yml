@@ -23,7 +23,9 @@ jobs:
       - name: bump verison
         run: |
           npm version patch
-          git push origin --tags
+          git add -A
+          git commit -m 'release:'
+          git push origin master--tags
       - name: publish
         run: npm publish
         env:
