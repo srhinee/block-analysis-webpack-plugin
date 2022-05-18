@@ -23,9 +23,12 @@ jobs:
       - name: bump verison
         run: |
           npm version patch > version.txt
-          git add version.txt
-          git commit -m "release"
-          git push --tags
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS }}
+          branch: ${{ github.ref }}
+          tags: true
       - name: publish
         run: npm publish
         env:
