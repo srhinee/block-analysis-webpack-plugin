@@ -21,6 +21,8 @@ jobs:
           yarn add webpack@4
       - name: unit
         run: yarn run test
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@1.1.3
         with:
@@ -37,9 +39,8 @@ jobs:
       - name: setup
         run: |
           yarn add webpack@4
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
         with:
           start: npm run serve
-          parallel: true
           spec: cypress/integration/webpack-module-graph/**/*
