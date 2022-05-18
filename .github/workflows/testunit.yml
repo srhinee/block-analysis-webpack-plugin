@@ -1,0 +1,25 @@
+name: unit test
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 14 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.com
+      - name: setup
+        run: |
+          yarn add webpack@4
+          yarn
+      - name: test unit
+        run: |
+          yarn run test

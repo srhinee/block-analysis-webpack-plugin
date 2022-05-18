@@ -1,5 +1,7 @@
 <!-- PROJECT SHIELDS -->
 [![GitHub license][license-shield]][license-url]
+![workflow][workflow-shield]
+![version][version-shield]
 <!-- PROJECT LOGO -->
 
 <br />
@@ -196,6 +198,9 @@ todo...
 
 [license-url]: https://github.com/srhinee/block-analysis-webpack-plugin/blob/main/LICENSE
 
+[workflow-shield]:https://img.shields.io/github/workflow/status/srhinee/block-analysis-webpack-plugin/npm%20public?style=flat-square 
 
+[npm-shield]:https://img.shields.io/npm/dw/block-analysis-webpack-plugin?style=flat-square
 
+[version-shield]:https://img.shields.io/npm/v/block-analysis-webpack-plugin?style=flat-square
 

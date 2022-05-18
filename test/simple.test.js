@@ -1,19 +1,19 @@
 const webpack = require ('webpack')
 
-const handler = require ('../lib/webpack4Handler.js')
+const plugin = require ('../lib/')
 const config = require ('../examples/simple/webpack.config.js')
-const {plugin, pluginIsCalled} = require ('./setupTest.js')
 
 let result
 beforeAll (() => {
-  config.plugins.pop ()
-  config.plugins.push (new plugin ())
-  config.mode = 'development'
-  const compiler = webpack (config)
-  compiler.run ()
-  return pluginIsCalled
-  .then ((compilation) => handler (compilation))
-  .then (data => result = data)
+  return new Promise (resolve => {
+    config.plugins.pop ()
+    let instance = new plugin ({open: false})
+    instance.then (data => resolve (data))
+    config.plugins.push (instance)
+    config.mode = 'development'
+    const compiler = webpack (config)
+    compiler.run ()
+  }).then (data => result = data)
 }, 10000)
 
 
