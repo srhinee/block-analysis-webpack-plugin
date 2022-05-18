@@ -30,7 +30,18 @@ jobs:
   e2e:
     needs: [ unit ]
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 14 ]
     steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.com
+      - name: setup
+        run: |
+          yarn add webpack@4
       - name: test
         run: |
           yarn run serve

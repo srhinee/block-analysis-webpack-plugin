@@ -2,6 +2,7 @@
 [![GitHub license][license-shield]][license-url]
 ![workflow][workflow-shield]
 ![version][version-shield]
+[![codecov](https://codecov.io/gh/srhinee/block-analysis-webpack-plugin/branch/main/graph/badge.svg?token=9Q95PPSY9D)](https://codecov.io/gh/srhinee/block-analysis-webpack-plugin)
 <!-- PROJECT LOGO -->
 
 <br />
