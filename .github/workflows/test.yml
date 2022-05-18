@@ -1,11 +1,11 @@
-name: unit test
+name: test
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  publish:
+  unit:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,7 +19,19 @@ jobs:
       - name: setup
         run: |
           yarn add webpack@4
-          yarn
-      - name: test unit
+      - name: unit
+        run: yarn run test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage/clover.xml
+
+  e2e:
+    needs: [ unit ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
         run: |
-          yarn run test
+          yarn run serve
+          yarn run test:e2e

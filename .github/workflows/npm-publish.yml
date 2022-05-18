@@ -23,7 +23,7 @@ jobs:
       - name: bump verison
         run: |
           npm version patch
-          git push https://${{secrets.ACCESS}}@github.com/srhinee/block-analysis-webpack-plugin
+          git push origin --tags
       - name: publish
         run: npm publish
         env:

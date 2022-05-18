@@ -9,9 +9,8 @@
   ],
   "scripts": {
     "example:simple": "node examples/simple/bootstarp.js",
-    "serve": "node lib --open",
-    "test": "jest --coverage",
-    "test:update": "jest --updateSnapshot",
+    "serve": "node lib",
+    "test": "jest --updateSnapshot --coverage",
     "test:open": "cypress open",
     "test:e2e": "cypress run --spec cypress/integration/webpack-module-graph/**/*"
   },
