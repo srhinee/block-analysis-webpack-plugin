@@ -26,5 +26,5 @@ module.exports = {
     "<rootDir>/node_modules"
   ],
   "testEnvironment": "node",
-  "coverageReporters": ["clover", "json", "lcov", "text"]
+  "coverageReporters": ["clover", "json", "text"]
 }
