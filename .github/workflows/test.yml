@@ -22,10 +22,11 @@ jobs:
       - name: unit
         run: yarn run test
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.2
+        uses: codecov/codecov-action@v2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./coverage/clover.xml
+          directory: ./coverage/
 
   e2e:
     needs: [ unit ]
