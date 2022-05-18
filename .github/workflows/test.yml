@@ -22,11 +22,7 @@ jobs:
       - name: unit
         run: yarn run test
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          file: ./coverage/clover.xml
-          directory: ./coverage/
+        uses: codecov/codecov-action@v3
 
   e2e:
     needs: [ unit ]
@@ -43,3 +39,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm run serve
+          parallel: true
+          spec: ./cypress/integration/webpack-module-graph/**/*"
