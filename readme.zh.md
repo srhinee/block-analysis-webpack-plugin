@@ -3,6 +3,7 @@
 ![workflow][workflow-shield]
 ![version][version-shield]
 [![codecov](https://codecov.io/gh/srhinee/block-analysis-webpack-plugin/branch/main/graph/badge.svg?token=9Q95PPSY9D)](https://codecov.io/gh/srhinee/block-analysis-webpack-plugin)
+[![test](https://github.com/srhinee/block-analysis-webpack-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/srhinee/block-analysis-webpack-plugin/actions/workflows/test.yml)
 <!-- PROJECT LOGO -->
 
 <br />
@@ -199,7 +200,7 @@ todo...
 
 [license-url]: https://github.com/srhinee/block-analysis-webpack-plugin/blob/main/LICENSE
 
-[workflow-shield]:https://img.shields.io/github/workflow/status/srhinee/block-analysis-webpack-plugin/npm%20public?style=flat-square 
+[workflow-shield]:https://img.shields.io/github/workflow/status/srhinee/block-analysis-webpack-plugin/npm%20publish?style=flat-square 
 
 [npm-shield]:https://img.shields.io/npm/dw/block-analysis-webpack-plugin?style=flat-square
 
