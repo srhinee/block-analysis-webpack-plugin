@@ -11,7 +11,7 @@ jobs:
       matrix:
         node-version: [ 14 ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -22,10 +22,9 @@ jobs:
           git config --global user.name "shrine"
       - name: bump verison
         run: |
-          npm version patch
-          git add -A
-          git commit -m 'release:'
-          git push origin master--tags
+          npm version patch > version.txt
+          git commit -am "release"
+          git push --tags
       - name: publish
         run: npm publish
         env:
