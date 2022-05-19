@@ -44,3 +44,4 @@ jobs:
         with:
           start: npm run serve
           spec: cypress/integration/webpack-module-graph/**/*
+          record: false
