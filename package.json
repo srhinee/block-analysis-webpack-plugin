@@ -12,7 +12,12 @@
     "serve": "node lib --open",
     "test": "jest --updateSnapshot --coverage",
     "test:open": "cypress open",
-    "test:e2e": "cypress run --spec cypress/integration/webpack-module-graph/**/*"
+    "test:e2e": "cypress run --spec cypress/integration/webpack-module-graph/**/*",
+    "lint": "eslint . --ext '.js' --cache --fix",
+    "pretty": "prettier --loglevel warn --write \"*.{ts,js,json,yml,yaml}\""
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "repository": {
     "type": "git",
@@ -24,7 +29,7 @@
     "graph"
   ],
   "author": "samsara",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/srhinee/block-analysis-webpack-plugin/issues"
   },
@@ -39,6 +44,27 @@
   },
   "devDependencies": {
     "cypress": "^9.6.1",
-    "jest": "^28.1.0"
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-jest": "^24.7.0",
+    "eslint-plugin-jsdoc": "^39.2.9",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
