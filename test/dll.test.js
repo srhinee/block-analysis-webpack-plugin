@@ -1,28 +1,27 @@
 const webpack = require("webpack");
 
 const plugin = require("../lib/");
-const config = require("../examples/simple/webpack.config.js");
+const config = require("../examples/dll/webpack.config.js");
 
 let result;
 beforeAll(() => {
   return new Promise((resolve) => {
     config.plugins.pop();
-    let instance = new plugin();
+    let instance = new plugin({ open: false });
     instance.then((data) => resolve(data));
     config.plugins.push(instance);
-    config.mode = "production";
     const compiler = webpack(config);
     compiler.run();
   }).then((data) => (result = data));
 }, 10000);
 
-describe("test simple example production case", () => {
+describe("test dll example development case", () => {
   it("should result is defined", function () {
     expect(result).toBeDefined();
   });
 
-  it("should result module nums is 4", function () {
-    expect(result.performanceData.moduleNums).toEqual(4);
+  it("should result module nums is 2", function () {
+    expect(result.performanceData.moduleNums).toEqual(2);
   });
 
   it("should result chunk nums is 2", function () {
@@ -34,7 +33,7 @@ describe("test simple example production case", () => {
   });
 });
 
-describe("valid plugin output data for simple case", () => {
+describe("valid plugin output data for dll case", () => {
   it("should originTreeNodeData has length", function () {
     expect(result.originTreeNodeData.children.length).toBeGreaterThan(0);
   });

@@ -1,9 +1,7 @@
-const plugin = jest.fn ()
-const PLUGIN_NAME = "webpackModuleGraphPlugin"
+const plugin = jest.fn();
 
-beforeAll (() => {
-  console.log ('plugin is init')
-})
+beforeAll(() => {
+  console.log("plugin is init");
+});
 
-exports.plugin = plugin
-
+exports.plugin = plugin;

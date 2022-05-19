@@ -1,10 +1,21 @@
 <!-- PROJECT SHIELDS -->
 [![GitHub license][license-shield]][license-url]
-![workflow][workflow-shield]
-![version][version-shield]
-[![codecov](https://codecov.io/gh/srhinee/block-analysis-webpack-plugin/branch/main/graph/badge.svg?token=9Q95PPSY9D)](https://codecov.io/gh/srhinee/block-analysis-webpack-plugin)
-[![test](https://github.com/srhinee/block-analysis-webpack-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/srhinee/block-analysis-webpack-plugin/actions/workflows/test.yml)
-<!-- PROJECT LOGO -->
+[![downloads][npm-shield]][npm-url]
+[![version][version-shield]][npm-url]
+[![codecov][codecov-shield]][codecov-url]
+[![test][test-shield]][test-url]
+
+<!-- links -->
+[license-shield]: https://img.shields.io/github/license/srhinee/block-analysis-webpack-plugin?style=flat-square
+[license-url]: https://github.com/srhinee/block-analysis-webpack-plugin/blob/main/LICENSE
+[npm-shield]:https://img.shields.io/npm/dw/block-analysis-webpack-plugin?style=flat-square
+[version-shield]:https://img.shields.io/npm/v/block-analysis-webpack-plugin?style=flat-square
+[npm-url]:https://www.npmjs.com/package/block-analysis-webpack-plugin
+[codecov-shield]:https://codecov.io/gh/srhinee/block-analysis-webpack-plugin/branch/main/graph/badge.svg?token=9Q95PPSY9D
+[codecov-url]:https://codecov.io/gh/srhinee/block-analysis-webpack-plugin
+[test-shield]:https://github.com/srhinee/block-analysis-webpack-plugin/actions/workflows/test.yml/badge.svg
+[test-url]:https://github.com/srhinee/block-analysis-webpack-plugin/actions/workflows/test.yml
+
 
 <br />
 
@@ -13,16 +24,17 @@
     <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
 
-<h3 align="center">webpack模块依赖分析 </h3>
+  <h3 align="center"> webpack模块依赖分析 </h3>
+
   <p align="center">
     基于 G6 图形可视化引擎渲染 webpack 模块依赖
     <br />
     <br />
     <a href="./readme.md">English</a>
     ·
-    <a href="">报告错误</a>
+    <a href="https://github.com/srhinee/block-analysis-webpack-plugin/issues/new">报告错误</a>
     ·
-    <a href="">提出新功能</a>
+    <a href="https://github.com/srhinee/block-analysis-webpack-plugin/issues/new">提出新功能</a>
   </p>
 </p>
 
@@ -32,7 +44,6 @@
 - [开始使用](#开始使用)
 - [介绍](#介绍)
 - [概念](#概念)
-- [例子](#例子)
 - [许可](#许可)
 - [致谢](#致谢)
 
@@ -83,19 +94,18 @@ module的结构进行收集并使用G6可视化引擎进行渲染,插件的模�
 - <img alt="asyncDependenciesBlock" style='object-fit:contain' src="./public/chunk.png" width="130"/>**chunk节点**
   optimize模式特有,webpack生成多少chunk就会有多少chunk节点
 
-- <img alt="normalModule" style='object-fit:contain' src="./public/normalModule.png" width="130"/>**NormalModule**节点,
+- <img alt="normalModule" style='object-fit:contain' src="./public/normalModule.png" width="130"/>**NormalModule**,
   同步导入文件产生的类型,项目中最为普遍,也是惟一的真实节点,每一个NormaModule均代表一个真实项目文件,ES6导入`import mod from './a.js'`或者`const mod=require('./a.js')`
   语句会生成名为a.js的节点
 
-- <img alt="concatenateModule" style='object-fit:contain' src="./public/concatenatedModule.png" width="130"/>**ConcatenatedModule**节点,`optimization.concatenateModules`开启时会产生该类型模块,webpack production mode下会默认开启,也就是所谓的作用域提升(scope hoisting)
+- <img alt="concatenateModule" style='object-fit:contain' src="./public/concatenatedModule.png" width="130"/>**ConcatenatedModule**,`optimization.concatenateModules`开启时会产生该类型模块,webpack production mode下会默认开启,也就是所谓的作用域提升(scope hoisting)
   ,这时多个normalModule会根据合并规则合并在一个concatenateModule,详情见[优化](https://webpack.docschina.org/configuration/optimization/#optimizationconcatenatemodules)
 
-- <img alt="contextModule" style='object-fit:contain' src="./public/contextModule.png" width="130"/>**ContextModule**
-  节点,上下文模块,它包含目录下的所有模块的引用，如果一个 request 符合正则表达式，就能 require 进来,`require.context('./style',false,/.css$/)`
+- <img alt="contextModule" style='object-fit:contain' src="./public/contextModule.png" width="130"/>**ContextModule**,上下文模块,它包含目录下的所有模块的引用，如果一个 request 符合正则表达式，就能 require 进来,`require.context('./style',false,/.css$/)`
   语句会生成一个context模块,或者是一个导入表达式语句,如`import(name+'.css')`
   ,详情见 [依赖管理](https://webpack.docschina.org/guides/dependency-management/#require-with-expression)
 
-- <img alt="multiModule" style='object-fit:contain' src="./public/multiModule.png" width="130"/>**MultiModule**节点,
+- <img alt="multiModule" style='object-fit:contain' src="./public/multiModule.png" width="130"/>**MultiModule**,
   当webpack entry的值为list类型会生成此类模块,多个normalModule的抽象模块
   ```js
   //webpack.config
@@ -105,18 +115,22 @@ module的结构进行收集并使用G6可视化引擎进行渲染,插件的模�
   }
   ```
 
-- <img alt="multiModule" style='object-fit:contain' src="./public/cssModule.png" width="130"/>**CssModule**
-  节点,css提取时生成的节点,由`MiniCssExtractPlugin`产生,表示为一个被提取的css文件.
+- <img alt="cssModule" style='object-fit:contain' src="./public/cssModule.png" width="130"/>**CssModule**,css提取时生成的节点,由`MiniCssExtractPlugin`产生,表示为一个被提取的css文件.
 
+- <img alt="dllModule" style='object-fit:contain' src="./public/dllModule.png" width="130"/>**DllModule**,由`DllPlugin`产生,此插件用于在单独的 webpack 配置中创建一个 dll-only-bundle。 此插件会生成一个名为 manifest.json 的文件，这个文件是用于让 DllReferencePlugin 能够映射到相应的依赖上.
 
-- <img alt="importBlock" style='object-fit:contain' src="./public/importBlock.png" width="130"/>**ImportDependenciesBlock**节点, ES6动态导入时生成的类型,`import('./c').then()`语句会生成名为c的节点
+- <img alt="delegateModule" style='object-fit:contain' src="./public/delegateModule.png" width="130"/>**DelegatedModule**,由`DllReferencePlugin`产生,当我们导入dll库中的模块时,此时导入语句的就会被webpack生成为`DelegatedModule`而不是`NormalModule`.
 
-- <img alt="AMDRequireDependenciesBlock" style='object-fit:contain' src="./public/amdRequireBlock.png" width="130"/>**AMDRequireDependenciesBlock**节点,AMD导入生成的类型,`require (['./amd.js'],(module)=>{})`语句会生成名为amd.js的节点
+- <img alt="externalModule" style='object-fit:contain' src="./public/externalModule.png" width="130"/>**ExternalModule**,由`DllReferencePlugin`产生,表示导入的dll库,只会是`DelegatedModule`的子节点,其名称就是manifest.json中的name,具体dll的使用见[dll-plugin](https://webpack.js.org/plugins/dll-plugin/)
 
-- <img alt="requireEnsureDependenciesBlock" style='object-fit:contain' style='object-fit:contain' src="./public/requireEnsureBlock.png" width="130"/>**RequireEnsureDependenciesBlock**节点,webpack特有的CJS异步导入生成的类型,`require.ensure(["./shared"], (shared)=> {})`
+- <img alt="importBlock" style='object-fit:contain' src="./public/importBlock.png" width="130"/>**ImportDependenciesBlock**, ES6动态导入时生成的类型,`import('./c').then()`语句会生成名为c的节点
+
+- <img alt="AMDRequireDependenciesBlock" style='object-fit:contain' src="./public/amdRequireBlock.png" width="130"/>**AMDRequireDependenciesBlock**,AMD导入生成的类型,`require (['./amd.js'],(module)=>{})`语句会生成名为amd.js的节点
+
+- <img alt="requireEnsureDependenciesBlock" style='object-fit:contain' style='object-fit:contain' src="./public/requireEnsureBlock.png" width="130"/>**RequireEnsureDependenciesBlock**,webpack特有的CJS异步导入生成的类型,`require.ensure(["./shared"], (shared)=> {})`
   语句会生成名为shared的节点,详情可见[module-methods](https://webpack.js.org/api/module-methods/)
 
-- <img alt="asyncDependenciesBlock" style='object-fit:contain' src="./public/asyncBlock.png" width="130"/>**AsyncDependenciesBlock**节点, 动态加载表达式会生成的类型,一般是contextModule的子节点
+- <img alt="asyncDependenciesBlock" style='object-fit:contain' src="./public/asyncBlock.png" width="130"/>**AsyncDependenciesBlock**, 动态加载表达式会生成的类型,一般是contextModule的子节点
   ```js
   //index.js
   function dynamicImport(name) {
@@ -180,10 +194,6 @@ graph LR
 ![graph](./public/tree.gif)
 图状布局的优势是能表达环状结构,但是在节点过多时表现很差,图布局的hover状态是高亮显示相连节点.
 
-## 例子
-
-todo...
-
 ## 许可
 
 该项目是在 MIT 许可下签署,见 [LICENSE.txt](https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt)
@@ -193,16 +203,4 @@ todo...
 - [G6](https://g6.antv.vision/zh)
 - [Webpack](https://webpack.js.org/)
 - [Img Shields](https://shields.io)
-
-<!-- links -->
-
-[license-shield]: https://img.shields.io/github/license/srhinee/block-analysis-webpack-plugin?style=flat-square
-
-[license-url]: https://github.com/srhinee/block-analysis-webpack-plugin/blob/main/LICENSE
-
-[workflow-shield]:https://img.shields.io/github/workflow/status/srhinee/block-analysis-webpack-plugin/npm%20publish?style=flat-square 
-
-[npm-shield]:https://img.shields.io/npm/dw/block-analysis-webpack-plugin?style=flat-square
-
-[version-shield]:https://img.shields.io/npm/v/block-analysis-webpack-plugin?style=flat-square
 

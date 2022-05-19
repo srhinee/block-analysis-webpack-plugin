@@ -1,0 +1,16 @@
+# Ignore node_modules
+node_modules
+
+# Ignore some folders
+coverage
+cypress
+
+# Ignore not support files
+!.*.js
+.eslintrc.js
+*.d.ts
+graph/data.js
+
+
+# Ignore some examples files
+examples/**/*.js
