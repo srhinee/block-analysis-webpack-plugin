@@ -76,7 +76,7 @@
     let newObj = Array.isArray(obj) ? [] : {};
     if (obj && typeof obj === "object") {
       for (let key in obj) {
-        if (obj.hasOwn(key)) {
+        if (obj.hasOwnProperty(key)) {
           newObj[key] =
             obj && typeof obj[key] === "object"
               ? deepClone(obj[key])
