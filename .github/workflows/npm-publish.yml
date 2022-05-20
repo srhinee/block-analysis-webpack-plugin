@@ -5,7 +5,26 @@ on:
       - main
 
 jobs:
-  publish:
+  publish-github:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 14 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com
+      - name: bump verison
+        run: |
+          npm version patch
+      - name: publish github package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ACCESS }}
+
+  publish-npm:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,11 +52,3 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM}}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: https://npm.pkg.github.com
-      - name: publish github package
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACCESS }}
