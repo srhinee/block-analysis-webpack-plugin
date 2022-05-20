@@ -10,14 +10,11 @@ jobs:
     permissions:
       contents: read
       packages: write
-    strategy:
-      matrix:
-        node-version: [ 14 ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
           registry-url: 'https://npm.pkg.github.com'
       - name: setup
         run: |
