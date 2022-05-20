@@ -1,6 +1,6 @@
 {
   "name": "block-analysis-webpack-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A plugin for outputting webpack module dependency graphs",
   "main": "lib/index.js",
   "files": [
