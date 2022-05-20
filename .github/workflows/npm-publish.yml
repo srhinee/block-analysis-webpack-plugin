@@ -15,18 +15,20 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://npm.pkg.github.com',
+          always-auth: true
       - name: setup
         run: |
           git config --local user.email "shrine8263@yeah.net"
           git config --local user.name "samsara"
       - name: bump verison
         run: |
+          npm whoami
           npm version patch
       - name: publish github package
         run: npm publish
         env:
-          NODE_AUTH_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN:  ${{ secrets.ACCESS }}
 
   publish-npm:
     runs-on: ubuntu-latest
