@@ -7,6 +7,9 @@ on:
 jobs:
   publish-github:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     strategy:
       matrix:
         node-version: [ 14 ]
@@ -15,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://npm.pkg.github.com
+          registry-url: 'https://npm.pkg.github.com'
       - name: setup
         run: |
           git config --local user.email "shrine8263@yeah.net"
@@ -39,7 +42,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org
+          registry-url: 'https://registry.npmjs.org'
       - name: setup
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
