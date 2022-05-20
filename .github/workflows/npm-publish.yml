@@ -15,21 +15,29 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.com
+          registry-url: https://registry.npmjs.org
       - name: setup
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
       - name: bump verison
         run: |
-          npm version patch > version.txt
+          npm version patch
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACCESS }}
           branch: ${{ github.ref }}
           tags: true
-      - name: publish
+      - name: publish npm package
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM}}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com
+      - name: publish github package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ACCESS }}
