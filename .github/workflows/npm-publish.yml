@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com
+      - name: setup
+        run: |
+          git config --local user.email "shrine8263@yeah.net"
+          git config --local user.name "samsara"
       - name: bump verison
         run: |
           npm version patch
@@ -26,6 +30,7 @@ jobs:
 
   publish-npm:
     runs-on: ubuntu-latest
+    needs: [ publish-github ]
     strategy:
       matrix:
         node-version: [ 14 ]
