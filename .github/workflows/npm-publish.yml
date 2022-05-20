@@ -26,7 +26,7 @@ jobs:
       - name: publish github package
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACCESS }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM }}
 
   publish-npm:
     runs-on: ubuntu-latest
